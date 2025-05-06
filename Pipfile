@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 python-dotenv = "*"
 whitenoise = "*"
 gunicorn = "*"
@@ -13,6 +12,7 @@ psycopg2-binary = "*"
 djangorestframework-simplejwt = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+django = "*"
 
 [dev-packages]
 
