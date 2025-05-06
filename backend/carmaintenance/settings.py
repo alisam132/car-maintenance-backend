@@ -99,15 +99,8 @@ if 'ON_HEROKU' in os.environ:
 else:
     DATABASES = {
         'default': {
-            'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'ali',
-            'USER': 'ali',
-            'PASSWORD': '1234',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-            # The value of 'NAME' should match the value of 'NAME' you replaced.
-            }
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
