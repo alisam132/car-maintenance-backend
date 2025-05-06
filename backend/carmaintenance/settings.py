@@ -89,20 +89,20 @@ WSGI_APPLICATION = 'carmaintenance.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    if 'ON_HEROKU' in os.environ:
-        DATABASES = {
-            "default": dj_database_url.config(
-                env='DATABASE_URL',
-                conn_max_age=600,
-                conn_health_checks=True,
-                ssl_require=True,
-            ),
-        }
-    else:
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'carmaintenance',
-        }
+if 'ON_HEROKU' in os.environ:
+    DATABASES = {
+        "default": dj_database_url.config(
+            env='DATABASE_URL',
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        ),
+    }
+else:
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carmaintenance',
+    }
 }
 
 
