@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware"
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
@@ -87,8 +87,6 @@ WSGI_APPLICATION = 'carmaintenance.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
 if 'ON_HEROKU' in os.environ:
     DATABASES = {
         "default": dj_database_url.config(
@@ -99,11 +97,20 @@ if 'ON_HEROKU' in os.environ:
         ),
     }
 else:
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'carmaintenance',
+    DATABASES = {
+        'default': {
+            'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'ali',
+            'USER': 'ali',
+            'PASSWORD': '1234',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+            # The value of 'NAME' should match the value of 'NAME' you replaced.
+            }
+        }
     }
-}
+
 
 
 # Password validation
