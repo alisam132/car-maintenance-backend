@@ -1,1 +1,1 @@
-web: gunicorn <carmaintenance>.wsgi
+web: gunicorn carmaintenance.wsgi
